@@ -1,12 +1,10 @@
 /*
-  test.c
-
-  Created on: 20.04.2017
-       Author: leo
-
-  -Temperatursensor auslesen mit ADC10
-  -Anzeige durch LED Toggle ab Grenzwert
+  Reading the internal temperature sensor with the A/D converter (AD10)
+  and trigger LED at threshold
+  
+  Author: lklr
 */
+
 #include"msp430g2553.h"
 
 void tempInit()
@@ -32,7 +30,8 @@ int tempOut()
 }
 
 int main(void)
-{   volatile int temp;
+{   
+    volatile int temp;
     WDTCTL = WDTPW + WDTHOLD;
     temp=0;
     tempInit();
