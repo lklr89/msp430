@@ -1,7 +1,8 @@
 /*
   Control Launchpad LEDs with button S2
-       Author: lklr
+  Author: lklr
 */
+
 #include"msp430g2553.h"
 
 int main(void) {
