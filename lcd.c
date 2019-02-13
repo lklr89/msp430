@@ -11,9 +11,7 @@ void delay(unsigned int k)
     {
         for(i=0; i<100; i++)
 		;
- 
     }
- 
 }
 
 void data_write(void)
@@ -86,6 +84,6 @@ void lcd_init(void)
         send_command(0x38); // 8 bit mode
         send_command(0x0E); // clear the screen
         send_command(0x01); // display on cursor on
-        send_command(0x06);// increment cursor
-        send_command(0x80);// cursor position
+        send_command(0x06); // increment cursor
+        send_command(0x80); // cursor position
 }
