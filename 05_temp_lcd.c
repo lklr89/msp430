@@ -1,8 +1,8 @@
-/* LCD_own.c
-* Created on: 21-MAR-2018
-* Author: leo
-* Temperaturmessung mit MSP430 integriertem ptc + Anzeige auf LCD Screen.
+/*
+ Measuring temperature with integrated ptc and display values on LCD screen (16x2)
+ Author: lklr
 */
+
 #include <stdlib.h>
 #include <msp430g2553.h>
 #include "lcd.h"
@@ -10,7 +10,7 @@
  
 void main(void)
 {
- 	WDTCTL = WDTPW + WDTHOLD; // stop watchdog timer
+ 	WDTCTL = WDTPW + WDTHOLD;
 
 	volatile int temp;
 	unsigned char buffer[5];
