@@ -2,7 +2,7 @@
   test.c
 
   Created on: 20.04.2017
-       Author: leo
+       Author: lklr
 */
 #include"msp430g2553.h"
 
@@ -11,17 +11,17 @@ int main(void) {
 
   // stop watchdog timer
   WDTCTL = WDTPW | WDTHOLD;
-  // P1 als digitalen IO
+  // P1 as digital IO
   P1SEL = 0x00;
   // set up bit 0 of P1 as output
-  P1DIR |= 0x41; //=BIT6 (0x40) UND BIT0 (0x01)
-  //BIT3 (Taster S2) auf 0 setzen -> input
+  P1DIR |= 0x41; // =BIT6 (0x40) AND BIT0 (0x01)
+  // set BIT3 (Button S2) 0 -> input
   P1DIR &= ~BIT3;
-  //Pull-up aktivieren
+  // activate Pull-up 
   P1REN |= BIT3;
-  // BIT0 und BIT6 auf 0 initialisieren
+  // set BIT0 and BIT6 to 0 
   P1OUT &= ~(0x41);
-  // BIT3 auf 1 initialisieren
+  // initialize BIT3 to 1 
   P1OUT |= BIT3;
 
 
