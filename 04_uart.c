@@ -1,4 +1,7 @@
-
+/*
+ Sending fix string over UART
+ Author: lklr
+*/
 
 #include "msp430g2553.h"
 
