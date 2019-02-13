@@ -1,12 +1,3 @@
-/*
-  test.c
-
-  Created on: 20.04.2017
-       Author: leo
-
-  -Temperatursensor auslesen mit ADC10
-  -Anzeige durch LED Toggle ab Grenzwert
-*/
 #include <msp430g2553.h>
 #include "adc_temperature.h"
 
@@ -31,23 +22,4 @@ int tempOut()
     ADC10CTL0 &= ~ENC;                     // disable adc conversion
     return(int) ((t * 27069L - 18169625L) >> 16); // convert and pass
 }
-/*
-int main(void)
-{   volatile int temp;
-    WDTCTL = WDTPW + WDTHOLD;
-    temp=0;
-    tempInit();
-    P1SEL = 0x00;
-    P1DIR |= 0x40;
 
-    while(1)
-    {
-        __delay_cycles(500);  // wait and set breakpoint
-        temp=tempOut();        // read temp
-        __delay_cycles(500000); // wait and set breakpoint
-        if (temp > 35)
-        P1OUT ^= 0x40;
-    }
-    return 0;
-}
-*/
